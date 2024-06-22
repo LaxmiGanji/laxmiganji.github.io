@@ -17,13 +17,13 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
+    
 }
 
 header {
-    backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(28, 28, 30, 0.75);
-    color: #fff;
+    
+    background: linear-gradient(145deg, #000000 0%, #808080 50%, rgb(136, 148, 160) 100%);
+    color: black;
     padding: 1rem 0;
     text-align: center;
 }
@@ -39,33 +39,144 @@ header .user img {
 }
 
 header .user .name {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
     margin: 0.5rem 0;
 }
 
 header .user .post {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #ddd;
 }
-
 header .navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 3px;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
+
 
 header .navbar ul li {
     margin: 0 1rem;
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
 }
-
 header .navbar ul li a {
-    color: #fff;
-    font-size: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
 }
 
-header .navbar ul li a:hover {
-    color: #ddd;
+
+header .navbar ul li:hover {
+    background-color: #5e9fcb;
 }
+
+header .navbar ul li:hover a {
+    color: white;
+}
+
+
+header .navbar ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+header .navbar ul li:hover::after {
+    width: 100%;
+}
+
+
+@media (max-width: 768px) {
+    header .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    header .navbar ul li {
+        margin: 0.5rem 0;
+    }
+
+    header .navbar ul li a {
+        font-size: 1rem;
+    }
+}
+
+
+
+.info-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px lightblue;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.info-heading:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgb(11, 11, 254, 0.3);
+    
+    cursor: pointer;
+}
+
+.info-heading h3 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    position: relative;
+    margin: 0;
+}
+
+.info-heading h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.info-heading h3:hover::after {
+    width: 100%;
+    cursor: pointer;
+}
+
+.info-heading .name span {
+    color: #007acc;
+    font-weight: bold;
+}
+
+.info-heading .post span.typing-text {
+    color: #ff6600;
+    font-weight: bold;
+}
+
 
 .social-icons {
     display: flex;
